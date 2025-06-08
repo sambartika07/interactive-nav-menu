@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Nav Menu</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navigation Styles */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      transition: background-color 0.4s ease;
+      z-index: 999;
+    }
+
+    nav.scrolled {
+      background-color: #222;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s, background-color 0.3s;
+      border-radius: 8px;
+    }
+
+    nav ul li a:hover {
+      background-color: #ff6b6b;
+      color: #fff;
+    }
+
+    /* For demo content */
+    section {
+      padding: 100px 20px;
+      height: 100vh;
+    }
+
+    .section1 { background: #ffe4e1; }
+    .section2 { background: #e0ffff; }
+    .section3 { background: #f0fff0; }
+    .section4 { background: #f5f5dc; }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="#section1">Home</a></li>
+      <li><a href="#section2">About</a></li>
+      <li><a href="#section3">Services</a></li>
+      <li><a href="#section4">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="section1" class="section1"><h1>Home Section</h1></section>
+  <section id="section2" class="section2"><h1>About Section</h1></section>
+  <section id="section3" class="section3"><h1>Services Section</h1></section>
+  <section id="section4" class="section4"><h1>Contact Section</h1></section>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
