@@ -21,3 +21,5 @@ It was developed as part of my internship with **Prodigy Infotech**.
 - HTML
 - CSS
 - JavaScript
+Thanks to Prodigy Infotech for the opportunity to work on this project as part of their web development internship.
+
